@@ -8,7 +8,7 @@ const layout = ({children}:{children:React.ReactNode}) => {
   return (
     <div>
         <div className='border-b'>
-            <nav className='max-w-7xl mx-auto py-2 flex items-center justify-between'>
+        <nav className="flex items-center justify-between max-w-7xl mx-auto py-2">
                 <div>
                 <h1 className='text-2xl font-bold'>Formify.ai</h1>
                 </div>
