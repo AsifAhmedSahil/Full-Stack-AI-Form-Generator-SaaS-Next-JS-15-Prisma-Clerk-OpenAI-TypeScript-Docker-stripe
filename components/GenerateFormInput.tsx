@@ -33,10 +33,12 @@ const GenerateFormInput: React.FC<{ text?: string }> = ({ text }) => {
     setDescription(text)
   },[text])
 
+  
+
   useEffect(()=>{
     if(state?.success){
       console.log(state)
-      toast(state.message)
+      toast.success(state.message)
       // router.push(`/dashboard/forms/edit/${state.data.id}`)
     }
     else if(state?.message){
