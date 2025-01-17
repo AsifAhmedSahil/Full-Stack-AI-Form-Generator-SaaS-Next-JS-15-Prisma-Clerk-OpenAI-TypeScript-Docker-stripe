@@ -64,7 +64,7 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
 
     console.log(parseFormData);
 
-    // parse korte hole korbo
+    
 
     // save the form to database
     const form = await prisma.form.create({
