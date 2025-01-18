@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import AiGeneratedForm from '@/components/AiGeneratedForm';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import prisma from '@/lib/prisma';
 import React from 'react'
 
 const Edit = async ({params}:{params:Promise<{formId:string}>}) => {
     const formID = (await params).formId;
 
-    const form = await prisma.form.findUnique({
+    const form : any = await prisma.form.findUnique({
         where:{
             id:Number(formID)
         }
@@ -13,7 +16,16 @@ const Edit = async ({params}:{params:Promise<{formId:string}>}) => {
     console.log(form)
 
   return (
-    <div>Edit - {formID}</div>
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          <h1>{form?.content.title}</h1>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <AiGeneratedForm form={form} isEditMode={true}/>
+      </CardContent>
+    </Card>
   )
 }
 
