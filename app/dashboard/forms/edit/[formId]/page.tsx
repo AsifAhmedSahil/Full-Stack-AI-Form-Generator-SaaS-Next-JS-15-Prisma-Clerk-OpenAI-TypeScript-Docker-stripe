@@ -1,32 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import AiGeneratedForm from '@/components/AiGeneratedForm';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import prisma from '@/lib/prisma';
-import React from 'react'
 
-const Edit = async ({params}:{params:Promise<{formId:string}>}) => {
-    const formID = (await params).formId;
+import AiGeneratedForm from "@/components/AiGeneratedForm";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import prisma from "@/lib/prisma";
+import React from "react";
 
-    const form : any = await prisma.form.findUnique({
-        where:{
-            id:Number(formID)
-        }
-    })
+const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
+  const formID = (await params).formId;
 
-    console.log(form)
+  const form: any = await prisma.form.findUnique({
+    where: {
+      id: Number(formID),
+    },
+  });
+
+  console.log(form);
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>
-          <h1>{form?.content.title}</h1>
+          <h1 className="font-bold text-2xl text-center">{form?.content.title}</h1>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <AiGeneratedForm form={form} isEditMode={true}/>
+        <AiGeneratedForm form={form} isEditMode={true} />
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default Edit
+export default Edit;
