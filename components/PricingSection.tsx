@@ -51,7 +51,7 @@ const PricingSection = () => {
               <Button
                 className={`${
                   plan.level === "Enterprise" &&
-                  "text-black bg-white hover:bg-null"
+                  "text-black bg-white hover:bg-null hover:text-black"
                 } w-full`}
                 variant={"outline"}
               >
