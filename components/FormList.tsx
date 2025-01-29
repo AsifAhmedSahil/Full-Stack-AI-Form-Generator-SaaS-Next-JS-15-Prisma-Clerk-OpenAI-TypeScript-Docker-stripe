@@ -35,9 +35,7 @@ const FormList: FC<Props> = ({ form }) => {
   
   };
 
-  const updateFormHandler = () =>{
-    console.log(update)
-  }
+  
   return (
     <div>
       <Card className="w-[350px]">
